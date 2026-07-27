@@ -1,0 +1,37 @@
+.dot,
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.9);
+}
+
+.ring {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(2px);
+  transition: transform 0.16s ease-out, background 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.ringActive {
+  background: rgba(59, 130, 246, 0.14);
+  border-color: rgba(139, 92, 246, 0.6);
+}
+
+@media (hover: none), (max-width: 900px) {
+  .dot,
+  .ring {
+    display: none;
+  }
+}

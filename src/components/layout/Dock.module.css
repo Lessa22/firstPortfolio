@@ -1,0 +1,67 @@
+.dock {
+  position: fixed;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  z-index: 95;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.item {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  transition: transform 0.35s var(--ease), color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.item:hover {
+  transform: translateY(-10px) scale(1.14);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.active {
+  color: var(--text);
+  background: linear-gradient(140deg, rgba(59, 130, 246, 0.6), rgba(139, 92, 246, 0.5));
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 120%;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: rgba(7, 11, 20, 0.92);
+  font-size: 0.72rem;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.item:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 760px) {
+  .dock {
+    display: none;
+  }
+}

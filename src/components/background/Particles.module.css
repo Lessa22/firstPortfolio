@@ -1,0 +1,27 @@
+.field {
+  position: absolute;
+  inset: 0;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(147, 197, 253, 0.8);
+  animation-name: rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rise {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(18px, -120px, 0);
+  }
+  100% {
+    transform: translate3d(-10px, -240px, 0);
+    opacity: 0;
+  }
+}

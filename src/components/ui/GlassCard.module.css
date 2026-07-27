@@ -1,0 +1,52 @@
+.card {
+  position: relative;
+  height: 100%;
+  padding: 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(26px) saturate(170%);
+  -webkit-backdrop-filter: blur(26px) saturate(170%);
+  box-shadow: var(--shadow);
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.sheen {
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--glow-x) var(--glow-y),
+    rgba(59, 130, 246, 0.22),
+    rgba(139, 92, 246, 0.12) 42%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+}
+
+.card:hover .sheen {
+  opacity: 1;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, #000, transparent 45%);
+}
+
+.card > *:not(.sheen) {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 700px) {
+  .card {
+    padding: 22px;
+  }
+}
