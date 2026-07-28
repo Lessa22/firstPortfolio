@@ -1,18 +1,20 @@
 :root {
-  --bg: #070b14;
+  --bg: #05070e;
   --bg-soft: #0b1220;
-  --accent: #3b82f6;
-  --secondary: #8b5cf6;
-  --glass: rgba(255, 255, 255, 0.08);
-  --glass-strong: rgba(255, 255, 255, 0.12);
-  --border: rgba(255, 255, 255, 0.15);
-  --text: #ffffff;
-  --text-dim: rgba(255, 255, 255, 0.62);
-  --text-faint: rgba(255, 255, 255, 0.42);
+  --accent: #7ea8ff;
+  --secondary: #9eb2ff;
+  --glass: rgba(255, 255, 255, 0.055);
+  --glass-strong: rgba(255, 255, 255, 0.082);
+  --border: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text: #f4f7ff;
+  --text-dim: rgba(244, 247, 255, 0.72);
+  --text-faint: rgba(244, 247, 255, 0.5);
   --radius-sm: 14px;
   --radius: 22px;
   --radius-lg: 32px;
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --shadow: 0 14px 40px rgba(1, 7, 21, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --shadow-soft: 0 10px 30px rgba(3, 8, 24, 0.18);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --max-width: 1180px;
 }
@@ -27,12 +29,14 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at top left, rgba(126, 168, 255, 0.08), transparent 30%),
+    linear-gradient(135deg, #05060d 0%, #0a1020 45%, #060812 100%);
   color: var(--text);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
     sans-serif;
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -42,8 +46,8 @@ h2,
 h3,
 h4 {
   margin: 0;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
   font-weight: 600;
 }
 
@@ -73,7 +77,7 @@ button {
 }
 
 ::selection {
-  background: rgba(59, 130, 246, 0.35);
+  background: rgba(126, 168, 255, 0.3);
 }
 
 ::-webkit-scrollbar {
@@ -81,12 +85,12 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050810;
+  background: rgba(4, 7, 16, 0.95);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--accent), var(--secondary));
-  border-radius: 10px;
+  background: linear-gradient(180deg, var(--accent), var(--secondary));
+  border-radius: 999px;
 }
 
 .container {
@@ -97,16 +101,16 @@ button {
 }
 
 .glass {
-  background: var(--glass);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
   border: 1px solid var(--border);
-  backdrop-filter: blur(26px) saturate(160%);
-  -webkit-backdrop-filter: blur(26px) saturate(160%);
+  backdrop-filter: blur(24px) saturate(155%);
+  -webkit-backdrop-filter: blur(24px) saturate(155%);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-soft);
 }
 
 .gradient-text {
-  background: linear-gradient(100deg, #ffffff 10%, var(--accent) 55%, var(--secondary) 95%);
+  background: linear-gradient(110deg, #f9fbff 8%, var(--accent) 45%, #d7e3ff 95%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -115,6 +119,10 @@ button {
 @media (max-width: 700px) {
   body {
     font-size: 15px;
+  }
+
+  .container {
+    padding: 0 20px;
   }
 }
 

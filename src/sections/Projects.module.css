@@ -1,7 +1,7 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
 }
 
 .card {
@@ -16,13 +16,12 @@
   flex-direction: column;
   justify-content: flex-end;
   gap: 4px;
-  height: 170px;
-  padding: 18px;
+  min-height: 188px;
+  padding: 16px;
   border-radius: 18px;
-  border: 1px dashed rgba(255, 255, 255, 0.18);
-  background: radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.28), transparent 60%),
-    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.24), transparent 60%),
-    rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(126, 168, 255, 0.12), rgba(255, 255, 255, 0.03));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .thumb:has(.image) {
@@ -36,15 +35,16 @@
   height: 100%;
   object-fit: cover;
   border-radius: 17px;
-  transition: transform 0.6s var(--ease);
+  transition: transform 0.6s var(--ease), filter 0.6s var(--ease);
 }
 
 .card:hover .image {
-  transform: scale(1.05);
+  transform: scale(1.04);
+  filter: saturate(1.04);
 }
 
 .thumbLabel {
-  font-size: 1.1rem;
+  font-size: 1.04rem;
   font-weight: 600;
 }
 
@@ -58,8 +58,8 @@
 .body {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 20px 4px 4px;
+  gap: 10px;
+  padding: 16px 4px 4px;
   flex: 1;
 }
 
@@ -71,28 +71,28 @@
 }
 
 .title {
-  font-size: 1.25rem;
+  font-size: 1.24rem;
 }
 
 .status {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 5px 11px;
+  padding: 5px 10px;
   border-radius: 999px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   font-size: 0.72rem;
   white-space: nowrap;
 }
 
 .done {
-  color: #6ee7b7;
-  background: rgba(52, 211, 153, 0.12);
+  color: #8be6b6;
+  background: rgba(123, 227, 181, 0.14);
 }
 
 .progress {
-  color: #fcd34d;
-  background: rgba(252, 211, 77, 0.12);
+  color: #f6d37a;
+  background: rgba(246, 211, 122, 0.14);
 }
 
 .tagline {
@@ -114,7 +114,7 @@
 }
 
 .features li::before {
-  content: '\2022';
+  content: '•';
   margin-right: 8px;
   color: var(--secondary);
 }
@@ -127,9 +127,9 @@
 }
 
 .tech li {
-  padding: 5px 11px;
+  padding: 5px 10px;
   border-radius: 999px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.05);
   font-size: 0.76rem;
   color: var(--text-dim);
@@ -161,7 +161,7 @@
 
 @media (max-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

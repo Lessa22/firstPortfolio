@@ -9,60 +9,52 @@
 .gradient {
   position: absolute;
   inset: -20%;
-  background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.22), transparent 45%),
-    radial-gradient(circle at 80% 10%, rgba(139, 92, 246, 0.2), transparent 45%),
-    radial-gradient(circle at 60% 85%, rgba(59, 130, 246, 0.16), transparent 50%);
-  animation: drift 26s ease-in-out infinite alternate;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(126, 168, 255, 0.18), transparent 36%),
+    radial-gradient(circle at 82% 12%, rgba(158, 178, 255, 0.14), transparent 38%),
+    radial-gradient(circle at 60% 88%, rgba(126, 168, 255, 0.12), transparent 42%);
+  animation: drift 28s ease-in-out infinite alternate;
 }
 
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.5;
+  filter: blur(100px);
+  opacity: 0.38;
 }
 
 .blobOne {
-  width: 460px;
-  height: 460px;
+  width: 440px;
+  height: 440px;
   top: -120px;
-  left: -80px;
-  background: rgba(59, 130, 246, 0.42);
+  left: -90px;
+  background: rgba(126, 168, 255, 0.26);
   animation: float 20s ease-in-out infinite;
 }
 
 .blobTwo {
-  width: 380px;
-  height: 380px;
-  top: 35%;
-  right: -110px;
-  background: rgba(139, 92, 246, 0.38);
+  width: 340px;
+  height: 340px;
+  top: 40%;
+  right: -90px;
+  background: rgba(158, 178, 255, 0.2);
   animation: float 24s ease-in-out infinite reverse;
 }
 
 .blobThree {
-  width: 520px;
-  height: 520px;
+  width: 500px;
+  height: 500px;
   bottom: -180px;
-  left: 30%;
-  background: rgba(37, 99, 235, 0.28);
+  left: 24%;
+  background: rgba(99, 124, 219, 0.2);
   animation: float 30s ease-in-out infinite;
-}
-
-.grid {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 68px 68px;
-  mask-image: radial-gradient(circle at 50% 30%, #000, transparent 78%);
 }
 
 .noise {
   position: absolute;
   inset: 0;
-  opacity: 0.045;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @keyframes float {
@@ -71,7 +63,7 @@
     transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translate3d(40px, -60px, 0) scale(1.12);
+    transform: translate3d(34px, -48px, 0) scale(1.08);
   }
 }
 
@@ -80,6 +72,6 @@
     transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(-40px, 40px, 0);
+    transform: translate3d(-28px, 26px, 0);
   }
 }

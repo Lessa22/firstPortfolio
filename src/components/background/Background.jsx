@@ -8,7 +8,6 @@ function Background() {
       <div className={`${styles.blob} ${styles.blobOne}`} />
       <div className={`${styles.blob} ${styles.blobTwo}`} />
       <div className={`${styles.blob} ${styles.blobThree}`} />
-      <div className={styles.grid} />
       <Particles />
       <div className={styles.noise} />
     </div>
