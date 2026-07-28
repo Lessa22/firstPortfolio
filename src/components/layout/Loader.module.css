@@ -12,7 +12,7 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.5), transparent 70%);
+  background: conic-gradient(from 0deg, rgba(118, 166, 243, 0.5), rgba(134, 93, 228, 0.5), transparent 70%);
   filter: blur(70px);
   animation: spin 4.5s linear infinite;
 }

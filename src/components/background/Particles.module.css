@@ -7,7 +7,7 @@
   position: absolute;
   border-radius: 50%;
   background: #ffffff;
-  box-shadow: 0 0 8px rgba(147, 197, 253, 0.8);
+  box-shadow: 0 0 8px rgba(12, 13, 14, 0.8);
   animation-name: rise;
   animation-timing-function: linear;
   animation-iteration-count: infinite;

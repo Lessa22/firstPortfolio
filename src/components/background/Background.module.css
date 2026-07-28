@@ -8,63 +8,144 @@
 
 .gradient {
   position: absolute;
-  inset: -20%;
+  inset: -25%;
   background:
-    radial-gradient(circle at 18% 18%, rgba(126, 168, 255, 0.18), transparent 36%),
-    radial-gradient(circle at 82% 12%, rgba(158, 178, 255, 0.14), transparent 38%),
-    radial-gradient(circle at 60% 88%, rgba(126, 168, 255, 0.12), transparent 42%);
-  animation: drift 28s ease-in-out infinite alternate;
+    radial-gradient(circle at 18% 18%, rgba(192, 192, 192, 0.22), transparent 34%),
+    radial-gradient(circle at 80% 10%, rgba(197, 197, 197, 0.18), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(194, 195, 197, 0.12), transparent 45%),
+    linear-gradient(
+      180deg,
+      #e2e2e9 0%,
+      #313131 35%,
+      #353434 100%
+    );
+
+  animation: drift 30s ease-in-out infinite alternate;
 }
 
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.38;
-}
+filter: blur(180px);
+opacity:.65;}
 
 .blobOne {
   width: 440px;
   height: 440px;
   top: -120px;
   left: -90px;
-  background: rgba(126, 168, 255, 0.26);
-  animation: float 20s ease-in-out infinite;
-}
+  background: rgba(255,255,255,.32);
+animation: float 34s ease-in-out infinite;}
 
 .blobTwo {
   width: 340px;
   height: 340px;
   top: 40%;
   right: -90px;
-  background: rgba(158, 178, 255, 0.2);
-  animation: float 24s ease-in-out infinite reverse;
-}
+background: rgba(236,239,243,.28);
+animation: float 34s ease-in-out infinite;}
 
 .blobThree {
   width: 500px;
   height: 500px;
   bottom: -180px;
   left: 24%;
-  background: rgba(99, 124, 219, 0.2);
-  animation: float 30s ease-in-out infinite;
-}
+background: rgba(220,224,230,.22);
+animation: float 42s ease-in-out infinite reverse;}
 
 .noise {
   position: absolute;
   inset: 0;
-  opacity: 0.05;
+opacity: .018;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(34px, -48px, 0) scale(1.08);
-  }
+
+.liquid{
+position:absolute;
+
+top:12%;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:900px;
+
+height:900px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+rgba(255,255,255,.45) 0%,
+rgba(255,255,255,.18) 40%,
+transparent 75%);
+
+filter:blur(120px);
+
+opacity:.75;
+
+animation:liquidMove 18s ease-in-out infinite;
+
+mix-blend-mode:screen;
+}
+
+@keyframes liquidMove{
+
+0%{
+
+transform:translateX(-50%) translateY(0px) scale(1);
+
+}
+
+50%{
+
+transform:translateX(-47%) translateY(-40px) scale(1.08);
+
+}
+
+100%{
+
+transform:translateX(-53%) translateY(20px) scale(.96);
+
+}
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translate3d(0,0,0) scale(1);
+
+}
+
+25%{
+
+transform:translate3d(35px,-25px,0) scale(1.04);
+
+}
+
+50%{
+
+transform:translate3d(0,-60px,0) scale(1.08);
+
+}
+
+75%{
+
+transform:translate3d(-35px,-15px,0) scale(1.03);
+
+}
+
+100%{
+
+transform:translate3d(0,0,0) scale(1);
+
+}
+
 }
 
 @keyframes drift {
