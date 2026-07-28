@@ -11,15 +11,15 @@ border-radius:30px;
     linear-gradient(
       145deg,
       rgba(255,255,255,.38),
-      rgba(255,255,255,.16)
+      rgba(255, 255, 255, 0.329)
     );
 
   backdrop-filter: blur(40px) saturate(190%);
   -webkit-backdrop-filter: blur(40px) saturate(190%);
 
   box-shadow:
-      0 20px 60px rgba(0,0,0,.08),
-      inset 0 1px 1px rgba(255,255,255,.95);
+      0 20px 60px rgba(3, 3, 3, 0.336),
+      inset 0 1px 1px rgb(255, 255, 255);
 
   transform-style: preserve-3d;
 
@@ -34,11 +34,11 @@ border-radius:30px;
 
 transform:translateY(-8px);
 
-border-color:rgba(255,255,255,.9);
+border-color:rgb(255, 255, 255);
 
 box-shadow:
 
-0 35px 80px rgba(0,0,0,.10),
+0 35px 80px rgba(0, 0, 0, 0.425),
 
 inset 0 1px 1px rgba(255,255,255,1);
 
@@ -58,9 +58,9 @@ radial-gradient(
 
 500px circle at var(--glow-x) var(--glow-y),
 
-rgba(255,255,255,.55),
+rgba(252, 252, 252, 0.322),
 
-rgba(255,255,255,.18) 42%,
+rgba(255, 255, 255, 0.596) 42%,
 
 transparent 72%
 
@@ -92,9 +92,9 @@ linear-gradient(
 
 180deg,
 
-rgba(255,255,255,.55),
+rgba(255, 255, 255, 0.349),
 
-rgba(255,255,255,.10) 40%,
+rgba(255, 255, 255, 0.616) 40%,
 
 transparent 70%
 

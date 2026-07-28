@@ -97,7 +97,7 @@ button {
 
 ::selection{
 background:rgba(220,224,230,.9);
-color:#111;
+color:#000000;
 }
 
 ::-webkit-scrollbar {
@@ -105,14 +105,14 @@ color:#111;
 }
 
 ::-webkit-scrollbar-track{
-background:#eef1f4;
+background:#b4d9ff;
 }
 
 ::-webkit-scrollbar-thumb{
 background:linear-gradient(
 180deg,
 #ffffff,
-#d9dde4
+#606266
 );
 }
 

@@ -10,14 +10,14 @@
   position: absolute;
   inset: -25%;
   background:
-    radial-gradient(circle at 18% 18%, rgba(192, 192, 192, 0.22), transparent 34%),
-    radial-gradient(circle at 80% 10%, rgba(197, 197, 197, 0.18), transparent 40%),
-    radial-gradient(circle at 50% 90%, rgba(194, 195, 197, 0.12), transparent 45%),
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,.22), transparent 34%),
+    radial-gradient(circle at 80% 10%, rgba(235,239,245,.18), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(210,215,223,.12), transparent 45%),
     linear-gradient(
       180deg,
-      #e2e2e9 0%,
-      #313131 35%,
-      #353434 100%
+      #fbfcff 0%,
+      #bbbbbd 35%,
+      #baeeee 100%
     );
 
   animation: drift 30s ease-in-out infinite alternate;
@@ -79,8 +79,8 @@ border-radius:50%;
 background:
 
 radial-gradient(circle,
-rgba(255,255,255,.45) 0%,
-rgba(255,255,255,.18) 40%,
+rgba(255, 255, 255, 0.363) 0%,
+rgba(48, 203, 241, 0.938) 40%,
 transparent 75%);
 
 filter:blur(120px);

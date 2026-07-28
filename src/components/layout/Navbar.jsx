@@ -33,8 +33,8 @@ function Navbar({ activeSection }) {
     >
       <nav className={styles.nav}>
         <a className={styles.brand} href="#hero">
-          <span className={styles.brandMark}>ASJ</span>
-          <span className={styles.brandText}>Sandratra Josiah</span>
+          <span className={styles.brandMark}>Me</span>
+          <span className={styles.brandText}>Sandratra</span>
         </a>
 
         <ul className={styles.links}>
