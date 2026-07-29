@@ -6,9 +6,9 @@
   padding: 12px 20px;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(243, 241, 241, 0.22), rgba(255, 255, 255, 0.08));
-  backdrop-filter: blur(24px) saturate(165%);
-  -webkit-backdrop-filter: blur(24px) saturate(165%);
+  background: linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,.045));
+  backdrop-filter: blur(30px) saturate(175%);
+  -webkit-backdrop-filter: blur(30px) saturate(175%);
   color: var(--text);
   font-size: 0.95rem;
   font-weight: 500;
@@ -33,7 +33,7 @@
 }
 
 .primary {
-  background: linear-gradient(125deg, rgba(126, 168, 255, 0.95), rgba(174, 188, 255, 0.85));
+  background: linear-gradient(125deg, rgba(154, 183, 255, .96), rgba(209, 191, 255, .86));
   border-color: rgba(255, 255, 255, 0.28);
   color: #07131e;
 }

@@ -1,15 +1,5 @@
 .glow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
-  background: radial-gradient(circle, rgba(156, 103, 192, 0.315), rgba(92, 233, 210, 0.349) 40%, transparent 70%);
-  filter: blur(30px);
-  transition: transform 0.18s ease-out;
+  display: none;
 }
 
 @media (max-width: 900px) {

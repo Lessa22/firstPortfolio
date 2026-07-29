@@ -1,27 +1,27 @@
 :root {
-  --bg: #05070E;
-  --bg-soft: #0B1020;
+  --bg: #000000;
+  --bg-soft: #07080b;
 
-  --accent: #4F8CFF;
-  --secondary: #8A7DFF;
+  --accent: #83a8ff;
+  --secondary: #c0a6ff;
 
-  --glass: rgba(255,255,255,.08);
-  --glass-strong: rgba(255,255,255,.12);
+  --glass: rgba(255,255,255,.075);
+  --glass-strong: rgba(255,255,255,.13);
 
-  --border: rgba(255,255,255,.12);
-  --border-strong: rgba(255,255,255,.18);
+  --border: rgba(255,255,255,.16);
+  --border-strong: rgba(255,255,255,.28);
 
   --text: #ffffff;
-  --text-dim: rgba(255,255,255,.90);
-  --text-faint: rgba(255,255,255,.72);
+  --text-dim: rgba(255,255,255,.88);
+  --text-faint: rgba(255,255,255,.68);
 
   --radius-sm: 14px;
   --radius: 24px;
   --radius-lg: 34px;
 
   --shadow:
-      0 30px 80px rgba(0,0,0,.4),
-      inset 0 1px 1px rgba(255,255,255,.15);
+      0 30px 80px rgba(0,0,0,.72),
+      inset 0 1px 1px rgba(255,255,255,.22);
 
   --shadow-soft:
       0 20px 60px rgba(0,0,0,.3);
@@ -37,11 +37,12 @@
 
 html {
   scroll-behavior: smooth;
+  background: #000000;
 }
 
 body {
   margin: 0;
-  background: #05070E;
+  background: var(--bg);
   color: var(--text);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
     sans-serif;
@@ -116,22 +117,12 @@ border-radius:5px;
 }
 
 .glass{
-
-background:rgba(255,255,255,.1);
-
-border:1px solid rgba(255,255,255,.18);
-
-backdrop-filter:blur(55px) saturate(185%);
-
--webkit-backdrop-filter:blur(55px) saturate(185%);
-
-box-shadow:
-
-0 30px 70px rgba(0,0,0,.5),
-
-inset 0 1px 1px rgba(255,255,255,.25);
-
-border-radius:28px;
+  background: linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.045));
+  border: 1px solid var(--border-strong);
+  backdrop-filter: blur(55px) saturate(185%);
+  -webkit-backdrop-filter: blur(55px) saturate(185%);
+  box-shadow: var(--shadow);
+  border-radius: 28px;
 
 }
 

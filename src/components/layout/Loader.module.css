@@ -4,7 +4,7 @@
   z-index: 9998;
   display: grid;
   place-items: center;
-  background: radial-gradient(circle at 50% 40%, #59fdfd, #5adef0 70%);
+  background: #000;
 }
 
 .orb {
@@ -12,7 +12,7 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, rgba(148, 178, 226, 0.5), rgba(132, 123, 151, 0.5), transparent 70%);
+  background: conic-gradient(from 0deg, rgba(130, 163, 255, .4), rgba(196, 163, 255, .3), transparent 70%);
   filter: blur(70px);
   animation: spin 4.5s linear infinite;
 }
@@ -26,9 +26,9 @@
   padding: 40px 46px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(30px) saturate(170%);
-  box-shadow: var(--shadow);
+  background: linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.04));
+  backdrop-filter: blur(42px) saturate(175%);
+  box-shadow: 0 30px 90px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.22);
 }
 
 .initials {
