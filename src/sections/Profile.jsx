@@ -2,29 +2,32 @@ import { FiTarget, FiLayers, FiDatabase, FiMonitor } from 'react-icons/fi'
 import Section from '../components/ui/Section'
 import GlassCard from '../components/ui/GlassCard'
 import Reveal from '../components/ui/Reveal'
-import { professionalProfile } from '../data/portfolio'
+import { useTranslation } from 'react-i18next'
+import { professionalProfileKeys } from '../data/portfolio'
 import styles from './Profile.module.css'
 
-const focus = [
-  { icon: <FiLayers />, title: 'Web Development', text: 'React front ends and PHP back ends.' },
-  { icon: <FiDatabase />, title: 'Databases', text: 'Relational modelling, SQL and NoSQL stores.' },
-  { icon: <FiMonitor />, title: 'Desktop Apps', text: 'Java and C# applications for real users.' },
-  { icon: <FiTarget />, title: 'Long-term Goal', text: 'Useful software, and one day video games.' },
-]
-
 function Profile() {
+  const { t } = useTranslation()
+
+  const focus = [
+    { icon: <FiLayers />, title: t('profile_web'), text: t('profile_web_text') },
+    { icon: <FiDatabase />, title: t('profile_databases'), text: t('profile_databases_text') },
+    { icon: <FiMonitor />, title: t('profile_desktop'), text: t('profile_desktop_text') },
+    { icon: <FiTarget />, title: t('profile_goal'), text: t('profile_goal_text') },
+  ]
+
   return (
     <Section
       id="profile"
-      label="Professional Profile"
-      title="Why I build software"
-      description="From a curiosity about video games to a serious engineering practice."
+      label={t('profile_label')}
+      title={t('profile_title')}
+      description={t('profile_description')}
     >
       <div className={styles.layout}>
         <Reveal>
           <GlassCard tilt={false} className={styles.text}>
-            {professionalProfile.map((paragraph) => (
-              <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+            {professionalProfileKeys.map((key) => (
+              <p key={key}>{t(key)}</p>
             ))}
           </GlassCard>
         </Reveal>

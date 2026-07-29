@@ -10,6 +10,7 @@ function LiquidButton({
   download,
   target,
   className = '',
+  ariaLabel,
 }) {
   const ref = useRef(null)
   const [pos, setPos] = useState({ x: 50, y: 50 })
@@ -46,6 +47,7 @@ function LiquidButton({
         target={target}
         rel={target === '_blank' ? 'noreferrer' : undefined}
         onMouseMove={handleMove}
+        aria-label={ariaLabel}
       >
         {content}
       </a>
@@ -53,7 +55,7 @@ function LiquidButton({
   }
 
   return (
-    <button ref={ref} type="button" className={classes} style={style} onClick={onClick} onMouseMove={handleMove}>
+    <button ref={ref} type="button" className={classes} style={style} onClick={onClick} onMouseMove={handleMove} aria-label={ariaLabel}>
       {content}
     </button>
   )

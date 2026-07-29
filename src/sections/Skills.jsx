@@ -3,6 +3,7 @@ import Section from '../components/ui/Section'
 import GlassCard from '../components/ui/GlassCard'
 import Reveal from '../components/ui/Reveal'
 import ProgressBar from '../components/ui/ProgressBar'
+import { useTranslation } from 'react-i18next'
 import {
   databases,
   languagesSkills,
@@ -13,12 +14,13 @@ import {
 import styles from './Skills.module.css'
 
 function Skills() {
+  const { t } = useTranslation()
   return (
     <Section
       id="skills"
-      label="Skills"
-      title="Tools I use every day"
-      description="Languages, databases, systems and tools I am comfortable with, and the ones I still have to learn."
+      label={t('skills_label')}
+      title={t('skills_title')}
+      description={t('skills_description')}
     >
       <div className={styles.layout}>
         <Reveal className={styles.wide}>
@@ -27,14 +29,14 @@ function Skills() {
               <span className={styles.icon}>
                 <FiCode />
               </span>
-              <h3>Programming Languages</h3>
+              <h3>{t('skills_languages')}</h3>
             </header>
             <div className={styles.bars}>
               {languagesSkills.map((skill, index) => (
                 <ProgressBar
                   key={skill.name}
                   label={skill.name}
-                  level={skill.level}
+                  level={t(skill.levelKey)}
                   value={skill.value}
                   delay={index * 0.04}
                 />
@@ -50,7 +52,7 @@ function Skills() {
                 <span className={styles.icon}>
                   <FiDatabase />
                 </span>
-                <h3>Databases</h3>
+                <h3>{t('skills_databases')}</h3>
               </header>
               <ul className={styles.chips}>
                 {databases.map((item) => (
@@ -66,13 +68,13 @@ function Skills() {
                 <span className={styles.icon}>
                   <FiTerminal />
                 </span>
-                <h3>Operating Systems</h3>
+                <h3>{t('skills_os')}</h3>
               </header>
               <ul className={styles.chips}>
                 {operatingSystems.map((item) => (
                   <li key={item.name}>
                     {item.name}
-                    {item.note && <span className={styles.note}>{item.note}</span>}
+                    {item.note && <span className={styles.note}>{t('skills_favorite')}</span>}
                   </li>
                 ))}
               </ul>
@@ -85,7 +87,7 @@ function Skills() {
                 <span className={styles.icon}>
                   <FiTool />
                 </span>
-                <h3>Development Tools</h3>
+                <h3>{t('skills_tools')}</h3>
               </header>
               <ul className={styles.chips}>
                 {tools.map((item) => (
@@ -101,7 +103,7 @@ function Skills() {
                 <span className={styles.icon}>
                   <FiAlertCircle />
                 </span>
-                <h3>Still to learn</h3>
+                <h3>{t('skills_learning')}</h3>
               </header>
               <ul className={`${styles.chips} ${styles.chipsMuted}`}>
                 {notFamiliar.map((item) => (

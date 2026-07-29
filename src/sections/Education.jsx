@@ -3,16 +3,18 @@ import { FiBookOpen } from 'react-icons/fi'
 import Section from '../components/ui/Section'
 import GlassCard from '../components/ui/GlassCard'
 import Reveal from '../components/ui/Reveal'
+import { useTranslation } from 'react-i18next'
 import { education } from '../data/portfolio'
 import styles from './Education.module.css'
 
 function Education() {
+  const { t } = useTranslation()
   return (
     <Section
       id="education"
-      label="Education"
-      title="My academic path"
-      description="One year of Computer Science, then a full Software Engineering degree."
+      label={t('education_label')}
+      title={t('education_title')}
+      description={t('education_description')}
     >
       <div className={styles.timeline}>
         <motion.span
@@ -31,7 +33,7 @@ function Education() {
             <GlassCard className={styles.card}>
               <span className={styles.period}>{item.period}</span>
               <h3 className={styles.school}>{item.school}</h3>
-              <p className={styles.degree}>{item.degree}</p>
+              <p className={styles.degree}>{t(item.degreeKey)}</p>
             </GlassCard>
           </Reveal>
         ))}

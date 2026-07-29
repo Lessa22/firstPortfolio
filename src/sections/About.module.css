@@ -16,6 +16,8 @@
   gap: 16px;
   color: var(--text-dim);
   font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.993);
+  
 }
 
 .facts {
@@ -27,8 +29,32 @@
 .fact {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 22px;
+  gap: 8px;
+  padding: 26px;
+  border-radius: 24px;
+  border: 1px solid rgba(245, 245, 245, 0.966);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.404), rgba(255, 255, 255, 0.08));
+  backdrop-filter: blur(65px) saturate(185%);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.637), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.fact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.fact:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .factLabel {
@@ -53,8 +79,69 @@
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 768px) {
+  .layout {
+    gap: 22px;
+  }
+
+  .facts {
+    gap: 14px;
+  }
+
+  .fact {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 600px) {
   .facts {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .fact {
+    padding: 20px;
+  }
+
+  .factLabel {
+    font-size: 0.68rem;
+  }
+
+  .factValue {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fact {
+    padding: 18px;
+  }
+
+  .factLabel {
+    font-size: 0.66rem;
+  }
+
+  .factValue {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .fact {
+    padding: 16px;
+  }
+
+  .factValue {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .fact {
+    padding: 14px;
+  }
+
+  .factValue {
+    font-size: 0.88rem;
   }
 }

@@ -12,6 +12,7 @@ import Hero from './sections/Hero'
 import About from './sections/About'
 import useActiveSection from './hooks/useActiveSection'
 import { navItems } from './data/navigation'
+import { useTranslation } from 'react-i18next'
 import styles from './App.module.css'
 
 const Profile = lazy(() => import('./sections/Profile'))
@@ -27,6 +28,7 @@ const Contact = lazy(() => import('./sections/Contact'))
 const sectionIds = navItems.map((item) => item.id)
 
 function App() {
+  const { t } = useTranslation()
   const [loading, setLoading] = useState(true)
   const activeSection = useActiveSection(sectionIds)
 
@@ -49,7 +51,7 @@ function App() {
       >
         <Hero />
         <About />
-        <Suspense fallback={<div className={styles.fallback}>Loading section...</div>}>
+        <Suspense fallback={<div className={styles.fallback}>{t('app_loading')}</div>}>
           <Profile />
           <Skills />
           <Projects />

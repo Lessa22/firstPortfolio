@@ -28,12 +28,15 @@
 .icon {
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: linear-gradient(140deg, rgba(59, 130, 246, 0.35), rgba(139, 92, 246, 0.2));
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.09));
+  backdrop-filter: blur(25px);
   font-size: 1.05rem;
+  color: var(--text);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .bars {
@@ -52,17 +55,21 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 14px;
+  padding: 10px 16px;
   border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.06);
-  font-size: 0.88rem;
-  transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  transition: transform 0.3s var(--ease), background 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  backdrop-filter: blur(25px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
 .chips li:hover {
-  transform: translateY(-3px);
-  background: rgba(59, 130, 246, 0.18);
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .chipsMuted li {
@@ -71,12 +78,15 @@
 }
 
 .note {
-  padding: 2px 8px;
+  padding: 4px 10px;
   border-radius: 999px;
-  background: linear-gradient(120deg, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.4));
-  font-size: 0.68rem;
+  background: linear-gradient(135deg, rgba(79, 140, 255, 0.6), rgba(138, 125, 255, 0.5));
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(79, 140, 255, 0.2);
 }
 
 @media (max-width: 980px) {
@@ -85,8 +95,97 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 768px) {
+  .layout {
+    gap: 18px;
+  }
+
+  .bars {
+    gap: 0 20px;
+  }
+
+  .chips li {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    gap: 10px;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
   .bars {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .chips {
+    gap: 8px;
+  }
+
+  .chips li {
+    padding: 7px 11px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h3 {
+    font-size: 1rem;
+  }
+
+  .icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+
+  .chips li {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+  }
+
+  .note {
+    padding: 3px 8px;
+    font-size: 0.64rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .header {
+    margin-bottom: 16px;
+  }
+
+  .icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .chips li {
+    padding: 5px 9px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .header h3 {
+    font-size: 0.95rem;
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .chips li {
+    padding: 4px 8px;
+    font-size: 0.72rem;
   }
 }

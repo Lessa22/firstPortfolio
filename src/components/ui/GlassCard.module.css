@@ -5,23 +5,25 @@
 
 border-radius:30px;
 
-  border: 1px solid rgba(255,255,255,.55);
+  border: 1px solid rgba(255,255,255,.65);
 
   background:
     linear-gradient(
       145deg,
-      rgba(255,255,255,.38),
-      rgba(255, 255, 255, 0.329)
+      rgba(255,255,255,.52),
+      rgba(255, 255, 255, 0.42)
     );
 
-  backdrop-filter: blur(40px) saturate(190%);
-  -webkit-backdrop-filter: blur(40px) saturate(190%);
+  backdrop-filter: blur(50px) saturate(180%);
+  -webkit-backdrop-filter: blur(50px) saturate(180%);
 
   box-shadow:
-      0 20px 60px rgba(3, 3, 3, 0.336),
-      inset 0 1px 1px rgb(255, 255, 255);
+      0 20px 60px rgba(3, 3, 3, 0.45),
+      inset 0 1px 1px rgba(255, 255, 255, 0.4);
 
   transform-style: preserve-3d;
+
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
 
   overflow: hidden;
 
@@ -92,11 +94,11 @@ linear-gradient(
 
 180deg,
 
-rgba(255, 255, 255, 0.349),
+rgba(255, 255, 255, 0.28),
 
-rgba(255, 255, 255, 0.616) 40%,
+rgba(15, 20, 40, 0.16) 68%,
 
-transparent 70%
+rgba(7, 10, 25, 0.2) 100%
 
 );
 

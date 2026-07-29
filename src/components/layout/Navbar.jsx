@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { FiMenu, FiX } from 'react-icons/fi'
+import { useTranslation } from 'react-i18next'
 import { navItems } from '../../data/navigation'
 import styles from './Navbar.module.css'
+import LanguageSwitcher from '../LanguageSwitcher'
 
 function Navbar({ activeSection }) {
+  const { t } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -33,8 +36,8 @@ function Navbar({ activeSection }) {
     >
       <nav className={styles.nav}>
         <a className={styles.brand} href="#hero">
-          <span className={styles.brandMark}>Me</span>
-          <span className={styles.brandText}>Sandratra</span>
+          <span className={styles.brandMark}>{t('brand_mark')}</span>
+          <span className={styles.brandText}>{t('brand_name')}</span>
         </a>
 
         <ul className={styles.links}>
@@ -44,7 +47,7 @@ function Navbar({ activeSection }) {
                 className={`${styles.link} ${activeSection === item.id ? styles.linkActive : ''}`}
                 href={`#${item.id}`}
               >
-                {item.label}
+                {t(item.label)}
                 {activeSection === item.id && (
                   <motion.span layoutId="nav-pill" className={styles.pill} transition={{ duration: 0.4 }} />
                 )}
@@ -53,14 +56,17 @@ function Navbar({ activeSection }) {
           ))}
         </ul>
 
-        <button
-          type="button"
-          className={styles.toggle}
-          onClick={() => setOpen((value) => !value)}
-          aria-label={open ? 'Close menu' : 'Open menu'}
-        >
-          {open ? <FiX /> : <FiMenu />}
-        </button>
+        <div className={styles.controls}>
+          <LanguageSwitcher />
+          <button
+            type="button"
+            className={styles.toggle}
+            onClick={() => setOpen((value) => !value)}
+            aria-label={t(open ? 'aria_close_menu' : 'aria_open_menu')}
+          >
+            {open ? <FiX /> : <FiMenu />}
+          </button>
+        </div>
       </nav>
 
       <AnimatePresence>
@@ -74,9 +80,10 @@ function Navbar({ activeSection }) {
           >
             {links.map((item) => (
               <a key={item.id} href={`#${item.id}`} onClick={() => setOpen(false)}>
-                {item.label}
+                {t(item.label)}
               </a>
             ))}
+            <LanguageSwitcher />
           </motion.div>
         )}
       </AnimatePresence>

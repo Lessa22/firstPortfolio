@@ -10,14 +10,14 @@
   position: absolute;
   inset: -25%;
   background:
-    radial-gradient(circle at 18% 18%, rgba(255,255,255,.22), transparent 34%),
-    radial-gradient(circle at 80% 10%, rgba(235,239,245,.18), transparent 40%),
-    radial-gradient(circle at 50% 90%, rgba(210,215,223,.12), transparent 45%),
+    radial-gradient(circle at 18% 18%, rgba(153, 150, 150, 0.767), transparent 34%),
+    radial-gradient(circle at 80% 10%, rgba(59, 60, 61, 0.801), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(41, 41, 43, 0.918), transparent 45%),
     linear-gradient(
       180deg,
-      #fbfcff 0%,
-      #bbbbbd 35%,
-      #baeeee 100%
+      #c6cde2 0%,
+      #0e0d0d 35%,
+      #29806d 100%
     );
 
   animation: drift 30s ease-in-out infinite alternate;
@@ -34,7 +34,7 @@ opacity:.65;}
   height: 440px;
   top: -120px;
   left: -90px;
-  background: rgba(255,255,255,.32);
+  background: rgba(255,255,255,.38);
 animation: float 34s ease-in-out infinite;}
 
 .blobTwo {
@@ -42,7 +42,7 @@ animation: float 34s ease-in-out infinite;}
   height: 340px;
   top: 40%;
   right: -90px;
-background: rgba(236,239,243,.28);
+background: rgba(236,239,243,.34);
 animation: float 34s ease-in-out infinite;}
 
 .blobThree {
@@ -50,7 +50,7 @@ animation: float 34s ease-in-out infinite;}
   height: 500px;
   bottom: -180px;
   left: 24%;
-background: rgba(220,224,230,.22);
+background: rgba(220,224,230,.28);
 animation: float 42s ease-in-out infinite reverse;}
 
 .noise {

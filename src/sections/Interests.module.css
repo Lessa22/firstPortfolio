@@ -8,19 +8,46 @@
 .card {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 26px;
+  gap: 16px;
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(60px) saturate(180%);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .icon {
   display: grid;
   place-items: center;
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: 16px;
-  border: 1px solid var(--border);
-  background: linear-gradient(140deg, rgba(59, 130, 246, 0.32), rgba(139, 92, 246, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(20px);
   font-size: 1.3rem;
+  color: var(--text);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .title {
@@ -31,8 +58,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 28px 32px;
+  gap: 24px;
+  padding: 32px 36px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(60px) saturate(180%);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.license::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, transparent 100%);
+  pointer-events: none;
 }
 
 .licenseLabel {
@@ -55,27 +100,140 @@
 .categories li {
   display: grid;
   place-items: center;
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   border-radius: 14px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(15px);
   font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.categories li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .card {
+    padding: 24px;
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 768px) {
   .grid {
-    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .license {
+    padding: 28px 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .card {
+    padding: 20px;
   }
 
   .license {
     flex-direction: column;
     align-items: flex-start;
+    gap: 16px;
+    padding: 24px 28px;
+  }
+
+  .categories li {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+
+  .license {
+    padding: 20px 24px;
+  }
+
+  .licenseText {
+    font-size: 1.05rem;
+  }
+
+  .categories li {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .card {
+    padding: 16px;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .license {
+    padding: 18px 20px;
+  }
+
+  .categories li {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 320px) {
+  .card {
+    padding: 14px;
+  }
+
+  .icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .license {
+    padding: 16px 18px;
+  }
+
+  .categories li {
+    width: 36px;
+    height: 36px;
   }
 }

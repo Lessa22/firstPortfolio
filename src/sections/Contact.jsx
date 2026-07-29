@@ -3,46 +3,49 @@ import Section from '../components/ui/Section'
 import GlassCard from '../components/ui/GlassCard'
 import Reveal from '../components/ui/Reveal'
 import LiquidButton from '../components/ui/LiquidButton'
-import { contactPositions, profile } from '../data/portfolio'
+import { useTranslation } from 'react-i18next'
+import { contactPositionKeys, profile } from '../data/portfolio'
 import styles from './Contact.module.css'
 
 function Contact() {
+  const { t } = useTranslation()
   return (
     <Section
       id="contact"
-      label="Contact"
-      title="Let us build something together"
-      description="I am currently looking for a 3-month internship in Antananarivo."
+      label={t('contact_label')}
+      title={t('contact_title')}
+      description={t('contact_description')}
     >
       <Reveal>
         <GlassCard tilt={false} className={styles.panel}>
           <div className={styles.left}>
-            <h3 className={styles.heading}>Open to internship offers</h3>
+            <h3 className={styles.heading}>{t('contact_heading')}</h3>
             <p className={styles.text}>
-              I am looking for a 3-month internship in {profile.internshipCity}. Preferred positions:
+              {t('contact_text', { city: t('profile_internship_city') })}
             </p>
             <ul className={styles.positions}>
-              {contactPositions.map((position) => (
-                <li key={position}>{position}</li>
+              {contactPositionKeys.map((positionKey) => (
+                <li key={positionKey}>{t(positionKey)}</li>
               ))}
             </ul>
 
             <div className={styles.location}>
               <FiMapPin />
-              <span>{profile.city}</span>
+              <span>{t('profile_city')}</span>
             </div>
 
             <div className={styles.actions}>
-              <LiquidButton href={`mailto:${profile.email}`} icon={<FiSend />}>
-                Send an email
+              <LiquidButton href={`mailto:${profile.email}`} icon={<FiSend />} ariaLabel={t('aria_send_email')}>
+                {t('contact_send')}
               </LiquidButton>
               <LiquidButton
                 href={profile.github}
                 target="_blank"
                 variant="ghost"
                 icon={<FiGithub />}
+                ariaLabel={t('aria_github_profile')}
               >
-                GitHub profile
+                {t('contact_github')}
               </LiquidButton>
             </div>
           </div>
@@ -53,8 +56,8 @@ function Contact() {
                 <FiMail />
               </span>
               <div>
-                <span className={styles.label}>Email</span>
-                <a href={`mailto:${profile.email}`}>{profile.email}</a>
+                <span className={styles.label}>{t('contact_email')}</span>
+                <a href={`mailto:${profile.email}`} aria-label={t('aria_send_email_to', { email: profile.email })}>{profile.email}</a>
               </div>
             </li>
             {profile.phones.map((phone) => (
@@ -63,8 +66,8 @@ function Contact() {
                   <FiPhone />
                 </span>
                 <div>
-                  <span className={styles.label}>Phone</span>
-                  <a href={`tel:${phone}`}>{phone}</a>
+                <span className={styles.label}>{t('contact_phone')}</span>
+                <a href={`tel:${phone}`} aria-label={t('aria_call', { phone })}>{phone}</a>
                 </div>
               </li>
             ))}
@@ -73,9 +76,9 @@ function Contact() {
                 <FiGithub />
               </span>
               <div>
-                <span className={styles.label}>GitHub</span>
-                <a href={profile.github} target="_blank" rel="noreferrer">
-                  github.com/Lessa22
+                <span className={styles.label}>{t('hero_github')}</span>
+                <a href={profile.github} target="_blank" rel="noreferrer" aria-label={t('aria_github_profile')}>
+                  {t('contact_github_url')}
                 </a>
               </div>
             </li>
