@@ -20,12 +20,19 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid var(--glass-border);
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.035));
-  backdrop-filter: blur(36px) saturate(175%);
-  -webkit-backdrop-filter: blur(36px) saturate(175%);
-  box-shadow: 0 14px 40px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.16);
+  background: var(--glass-bg-soft);
+  background-color: var(--glass-fallback);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  box-shadow: 0 16px 44px rgba(0,0,0,.5), var(--glass-rim);
+  transition: background 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.nav:hover {
+  border-color: var(--glass-border-hi);
+  box-shadow: 0 18px 50px rgba(0,0,0,.56), var(--glass-rim-hi);
 }
 
 .brand {
@@ -77,7 +84,7 @@
 
 .link:hover {
   color: var(--text);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .link:focus-visible {
@@ -94,8 +101,8 @@
   inset: 0;
   z-index: -1;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, .11);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(160deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .06));
 }
 
 .toggle {
@@ -123,10 +130,12 @@
   margin: 12px 24px 0;
   padding: 16px;
   border-radius: var(--radius);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: linear-gradient(135deg, rgba(255,255,255,.15), rgba(255,255,255,.04));
-  backdrop-filter: blur(42px) saturate(175%);
-  box-shadow: 0 24px 60px rgba(0,0,0,.68), inset 0 1px 0 rgba(255,255,255,.18);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg-soft);
+  background-color: var(--glass-fallback);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  box-shadow: 0 24px 60px rgba(0,0,0,.6), var(--glass-rim);
 }
 
 .mobileMenu a {

@@ -29,9 +29,11 @@
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(140deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
-  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg-soft);
+  background-color: var(--glass-fallback);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   color: var(--text);
 }
@@ -42,11 +44,13 @@
   gap: 10px;
   padding: 28px 32px;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
-  backdrop-filter: blur(60px) saturate(180%);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg-soft);
+  background-color: var(--glass-fallback);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.42), var(--glass-rim);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
   position: relative;
   overflow: hidden;
 }
@@ -64,7 +68,8 @@
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  border-color: var(--glass-border-hi);
+  box-shadow: 0 34px 84px rgba(0, 0, 0, 0.5), var(--glass-rim-hi);
 }
 
 .period {

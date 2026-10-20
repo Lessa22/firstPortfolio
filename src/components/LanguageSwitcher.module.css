@@ -4,10 +4,12 @@
   gap: 8px;
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.2);
-  background: rgba(255,255,255,.075);
-  backdrop-filter: blur(28px) saturate(170%);
-  box-shadow: 0 8px 20px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.18);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg-soft);
+  background-color: var(--glass-fallback);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  box-shadow: 0 8px 20px rgba(0,0,0,.4), var(--glass-rim);
 }
 
 .button {
@@ -23,7 +25,7 @@
 }
 
 .button:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   color: var(--text);
 }
 

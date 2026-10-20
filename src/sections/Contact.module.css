@@ -4,12 +4,20 @@
   gap: 48px;
   padding: 48px;
   border-radius: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
-  backdrop-filter: blur(65px) saturate(185%);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  background-color: var(--glass-fallback);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  box-shadow: var(--glass-shadow), var(--glass-rim);
   position: relative;
   overflow: hidden;
+  transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.panel:hover {
+  border-color: var(--glass-border-hi);
+  box-shadow: var(--glass-shadow-hi), var(--glass-rim-hi);
 }
 
 .panel::before {
@@ -19,7 +27,7 @@
   left: 0;
   right: 0;
   height: 50%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, transparent 100%);
   pointer-events: none;
 }
 
@@ -43,16 +51,19 @@
 .positions li {
   padding: 10px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
+  background-color: var(--glass-fallback);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.075));
   font-size: 0.88rem;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+  transition: transform 0.3s var(--ease), background-image 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 
 .positions li:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.13));
+  border-color: var(--glass-border-hi);
   transform: translateY(-2px);
 }
 
@@ -84,18 +95,21 @@
   gap: 16px;
   padding: 18px 20px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(25px);
-  transition: transform 0.35s var(--ease), background 0.35s var(--ease), box-shadow 0.35s var(--ease);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  background-color: var(--glass-fallback);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.075));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform 0.35s var(--ease), background-image 0.35s var(--ease), box-shadow 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .details li:hover {
   transform: translateX(8px);
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.13));
+  border-color: var(--glass-border-hi);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
 .icon {
@@ -104,11 +118,13 @@
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: linear-gradient(140deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.09));
-  backdrop-filter: blur(25px);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg-soft);
+  background-color: var(--glass-fallback);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   color: var(--text);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .label {

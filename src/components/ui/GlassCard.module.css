@@ -3,21 +3,24 @@
   height: 100%;
   padding: 28px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, .22);
+  border: 1px solid var(--glass-border);
   border-radius: 30px;
-  background: linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.045) 48%, rgba(122,141,255,.07));
-  backdrop-filter: blur(42px) saturate(170%);
-  -webkit-backdrop-filter: blur(42px) saturate(170%);
-  box-shadow: 0 24px 70px rgba(0,0,0,.68), inset 0 1px 1px rgba(255,255,255,.25), inset 0 -1px 1px rgba(255,255,255,.04);
+  background: var(--glass-bg);
+  background-color: var(--glass-fallback);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  box-shadow: var(--glass-shadow), var(--glass-rim);
   transform-style: preserve-3d;
   text-shadow: 0 1px 10px rgba(0, 0, 0, .55);
-  transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease), background .45s var(--ease);
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease),
+    background .45s var(--ease), background-color .45s var(--ease);
 }
 .card:hover {
   transform: translateY(-8px);
-  border-color: rgba(255,255,255,.38);
-  background: linear-gradient(145deg, rgba(255,255,255,.19), rgba(255,255,255,.06) 48%, rgba(130,148,255,.1));
-  box-shadow: 0 34px 90px rgba(0,0,0,.78), inset 0 1px 1px rgba(255,255,255,.34);
+  border-color: var(--glass-border-hi);
+  background: var(--glass-bg);
+  background-color: var(--glass-fallback);
+  box-shadow: var(--glass-shadow-hi), var(--glass-rim-hi);
 }
 
 .sheen{
@@ -34,9 +37,9 @@ radial-gradient(
 
 500px circle at var(--glow-x) var(--glow-y),
 
-rgba(255, 255, 255, 0.18),
+rgba(255, 255, 255, 0.14),
 
-rgba(189, 209, 255, 0.12) 42%,
+rgba(189, 209, 255, 0.09) 42%,
 
 transparent 72%
 
@@ -68,17 +71,17 @@ linear-gradient(
 
 180deg,
 
-rgba(255, 255, 255, 0.12),
+rgba(255, 255, 255, 0.07),
 
-rgba(255, 255, 255, 0.02) 42%,
+rgba(255, 255, 255, 0.015) 42%,
 
-rgba(5, 7, 14, 0.14) 100%
+rgba(5, 7, 14, 0.1) 100%
 
 );
 
 pointer-events:none;
 
-opacity:.95;
+opacity:.85;
 
 }
 
@@ -104,11 +107,13 @@ linear-gradient(
 
 transparent,
 
-rgba(255,255,255,.95),
+rgba(255,255,255,.6),
 
 transparent
 
 );
+
+opacity:.75;
 
 }
 

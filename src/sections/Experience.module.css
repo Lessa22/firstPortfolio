@@ -10,11 +10,13 @@
   gap: 14px;
   padding: 32px;
   border-radius: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
-  backdrop-filter: blur(60px) saturate(180%);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg-soft);
+  background-color: var(--glass-fallback);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.42), var(--glass-rim);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
   position: relative;
   overflow: hidden;
 }
@@ -32,7 +34,8 @@
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  border-color: var(--glass-border-hi);
+  box-shadow: 0 34px 84px rgba(0, 0, 0, 0.5), var(--glass-rim-hi);
 }
 
 .period {
@@ -40,12 +43,14 @@
   width: fit-content;
   padding: 6px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--glass-border);
+  background-color: var(--glass-fallback);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.07));
   font-size: 0.76rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   color: var(--text-dim);
 }

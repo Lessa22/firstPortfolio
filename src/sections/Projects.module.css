@@ -9,11 +9,13 @@
   flex-direction: column;
   padding: 24px;
   border-radius: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
-  backdrop-filter: blur(65px) saturate(185%);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.22);
-  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  background-color: var(--glass-fallback);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45), var(--glass-rim);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
   position: relative;
   overflow: hidden;
 }
@@ -25,13 +27,14 @@
   left: 0;
   right: 0;
   height: 50%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, transparent 100%);
   pointer-events: none;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  border-color: var(--glass-border-hi);
+  box-shadow: 0 34px 84px rgba(0, 0, 0, 0.55), var(--glass-rim-hi);
 }
 
 .thumb {
@@ -43,10 +46,12 @@
   min-height: 196px;
   padding: 18px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.09));
-  backdrop-filter: blur(50px) saturate(185%);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  background-color: var(--glass-fallback);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), var(--glass-rim);
 }
 
 .thumb:has(.image) {
@@ -105,10 +110,11 @@
   gap: 6px;
   padding: 6px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   font-size: 0.74rem;
   white-space: nowrap;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -160,16 +166,19 @@
 .tech li {
   padding: 6px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
+  background-color: var(--glass-fallback);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.075));
   font-size: 0.78rem;
   color: var(--text-dim);
-  backdrop-filter: blur(15px);
-  transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.3s var(--ease), background-image 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 
 .tech li:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.13));
+  border-color: var(--glass-border-hi);
   transform: translateY(-2px);
 }
 

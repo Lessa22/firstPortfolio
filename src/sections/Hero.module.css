@@ -16,13 +16,20 @@
 .card {
   padding: 44px;
   border-radius: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
-  backdrop-filter: blur(70px) saturate(185%);
-  -webkit-backdrop-filter: blur(70px) saturate(185%);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  background-color: var(--glass-fallback);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  box-shadow: var(--glass-shadow), var(--glass-rim);
   position: relative;
   overflow: hidden;
+  transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.card:hover {
+  border-color: var(--glass-border-hi);
+  box-shadow: var(--glass-shadow-hi), var(--glass-rim-hi);
 }
 
 .card::before {
@@ -32,7 +39,7 @@
   left: 0;
   right: 0;
   height: 60%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, transparent 100%);
   pointer-events: none;
 }
 
@@ -42,11 +49,13 @@
   gap: 10px;
   padding: 10px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--glass-border);
+  background-color: var(--glass-fallback);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08));
   font-size: 0.82rem;
   color: var(--text-dim);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -122,11 +131,13 @@
   max-width: 340px;
   aspect-ratio: 3 / 4;
   border-radius: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.09));
-  backdrop-filter: blur(50px) saturate(185%);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  background-color: var(--glass-fallback);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
   overflow: hidden;
-  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.45), var(--glass-rim);
 }
 
 .photoCard img {
@@ -147,11 +158,13 @@
   padding: 16px 18px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(30px) saturate(185%);
+  background-color: var(--glass-fallback);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  backdrop-filter: blur(24px) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(24px) saturate(var(--glass-sat));
   font-size: 0.82rem;
   color: var(--text);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
 .ringOne,

@@ -5,11 +5,37 @@
   --accent: #83a8ff;
   --secondary: #c0a6ff;
 
-  --glass: rgba(255,255,255,.075);
-  --glass-strong: rgba(255,255,255,.13);
+  --glass: rgba(255,255,255,.05);
+  --glass-strong: rgba(255,255,255,.09);
 
-  --border: rgba(255,255,255,.16);
-  --border-strong: rgba(255,255,255,.28);
+  --border: rgba(255,255,255,.12);
+  --border-strong: rgba(255,255,255,.2);
+
+  /* Liquid Glass system ------------------------------------------------ */
+  /* Translucent fills: the page background is meant to read through them. */
+  --glass-bg:
+      linear-gradient(150deg,
+        rgba(255,255,255,.085) 0%,
+        rgba(255,255,255,.03) 46%,
+        rgba(150,175,255,.055) 100%);
+  --glass-bg-soft:
+      linear-gradient(150deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.022) 100%);
+
+  --glass-blur: 26px;
+  --glass-sat: 165%;
+
+  --glass-border: rgba(255,255,255,.14);
+  --glass-border-hi: rgba(255,255,255,.26);
+
+  /* Rim light: a thin bright edge on top, a whisper of light at the bottom. */
+  --glass-rim: inset 0 1px 0 rgba(255,255,255,.16), inset 0 -1px 0 rgba(255,255,255,.045);
+  --glass-rim-hi: inset 0 1px 0 rgba(255,255,255,.28), inset 0 -1px 0 rgba(255,255,255,.06);
+
+  --glass-shadow: 0 26px 64px rgba(0,0,0,.55);
+  --glass-shadow-hi: 0 34px 84px rgba(0,0,0,.64);
+
+  /* Painted under the gradient when backdrop-filter is unsupported. */
+  --glass-fallback: transparent;
 
   --text: #ffffff;
   --text-dim: rgba(255,255,255,.88);
@@ -29,6 +55,12 @@
   --ease: cubic-bezier(.22,1,.36,1);
 
   --max-width:1180px;
+}
+
+@supports not ((backdrop-filter: blur(2px)) or (-webkit-backdrop-filter: blur(2px))) {
+  :root {
+    --glass-fallback: rgba(8, 10, 16, .82);
+  }
 }
 
 * {
@@ -117,13 +149,15 @@ border-radius:5px;
 }
 
 .glass{
-  background: linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.045));
-  border: 1px solid var(--border-strong);
-  backdrop-filter: blur(55px) saturate(185%);
-  -webkit-backdrop-filter: blur(55px) saturate(185%);
-  box-shadow: var(--shadow);
+  background: var(--glass-bg);
+  background-color: var(--glass-fallback);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  box-shadow: var(--glass-shadow), var(--glass-rim);
   border-radius: 28px;
-
+  transition: background 0.4s var(--ease), border-color 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
 }
 
 .gradient-text {

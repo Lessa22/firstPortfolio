@@ -26,9 +26,11 @@
   padding: 40px 46px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  background: linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.04));
-  backdrop-filter: blur(42px) saturate(175%);
-  box-shadow: 0 30px 90px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.22);
+  background: var(--glass-bg);
+  background-color: rgba(8, 10, 16, .88);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  box-shadow: 0 30px 90px rgba(0,0,0,.8), var(--glass-rim);
 }
 
 .initials {
